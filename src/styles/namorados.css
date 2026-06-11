@@ -1,0 +1,162 @@
+/* Temas e Variáveis de Cores para o Relationship Wrapped */
+:root {
+  --wrapped-bg: oklch(0.08 0.03 310); /* Roxo extremamente escuro, quase preto */
+  --wrapped-fg: oklch(0.97 0.015 320);
+  --wrapped-accent-pink: oklch(0.65 0.25 350); /* Rosa neon brilhante */
+  --wrapped-accent-green: oklch(0.78 0.22 140); /* Verde neon estilo Spotify */
+  --wrapped-accent-purple: oklch(0.55 0.24 300); /* Roxo elétrico */
+  --wrapped-accent-gold: oklch(0.8 0.15 80); /* Dourado suave para noivado */
+  --wrapped-glass: rgba(255, 255, 255, 0.06);
+  --wrapped-glass-border: rgba(255, 255, 255, 0.12);
+}
+
+.theme-wrapped {
+  background-color: var(--wrapped-bg);
+  color: var(--wrapped-fg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+/* Brilhos Neon e Efeitos de Fundo */
+.neon-glow-pink {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.6), 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+.neon-glow-green {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.6), 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.neon-border-pink {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.3), inset 0 0 15px rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.5);
+}
+
+.neon-border-green {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3), inset 0 0 15px rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+/* Glassmorphism Romântico */
+.wrapped-glass {
+  background: var(--wrapped-glass);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid var(--wrapped-glass-border);
+}
+
+/* Elementos do Player de Música */
+.music-bar-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 24px;
+}
+
+.music-bar {
+  width: 3px;
+  height: 4px;
+  background-color: var(--wrapped-accent-green);
+  border-radius: 9999px;
+  transition: height 0.3s ease;
+}
+
+.music-bar-active .music-bar:nth-child(1) { animation: dance-bar 0.8s ease-in-out infinite alternate; }
+.music-bar-active .music-bar:nth-child(2) { animation: dance-bar 1.1s ease-in-out infinite alternate 0.2s; }
+.music-bar-active .music-bar:nth-child(3) { animation: dance-bar 0.9s ease-in-out infinite alternate 0.1s; }
+.music-bar-active .music-bar:nth-child(4) { animation: dance-bar 1.3s ease-in-out infinite alternate 0.3s; }
+.music-bar-active .music-bar:nth-child(5) { animation: dance-bar 0.7s ease-in-out infinite alternate 0.05s; }
+
+@keyframes dance-bar {
+  0% { height: 4px; }
+  100% { height: 24px; }
+}
+
+/* Animações e Pulsações */
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.animate-heart-beat {
+  animation: heart-beat 1.8s ease-in-out infinite;
+}
+
+/* Gradientes Spotify-like */
+.bg-wrapped-gradient-1 {
+  background: radial-gradient(circle at 10% 20%, oklch(0.25 0.12 330) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, oklch(0.12 0.08 260) 0%, transparent 60%),
+              var(--wrapped-bg);
+}
+
+.bg-wrapped-gradient-2 {
+  background: radial-gradient(circle at 80% 20%, oklch(0.3 0.14 310) 0%, transparent 50%),
+              radial-gradient(circle at 20% 90%, oklch(0.18 0.1 140) 0%, transparent 60%),
+              var(--wrapped-bg);
+}
+
+.bg-wrapped-gradient-noivado {
+  background: radial-gradient(circle at 50% 30%, oklch(0.25 0.08 60) 0%, transparent 60%),
+              radial-gradient(circle at 10% 90%, oklch(0.12 0.05 320) 0%, transparent 50%),
+              var(--wrapped-bg);
+}
+
+/* Efeito de Rotação Suave para Discos */
+.rotate-disk {
+  animation: rotate-disk-anim 12s linear infinite;
+}
+
+.rotate-disk-paused {
+  animation-play-state: paused;
+}
+
+@keyframes rotate-disk-anim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Transições e Estilos de Navegação */
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-dot-active {
+  width: 24px;
+  border-radius: 9999px;
+  background-color: var(--wrapped-accent-pink);
+}
+
+/* Responsividade Customizada */
+@media (max-width: 480px) {
+  .wrapped-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Mini Barras de Música para o Player Flutuante */
+.mini-music-bar-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+.mini-music-bar {
+  width: 2px;
+  height: 2px;
+  background-color: var(--wrapped-accent-pink);
+  border-radius: 9999px;
+}
+.music-bar-active .mini-music-bar:nth-child(1) { animation: dance-mini-bar 0.8s ease-in-out infinite alternate; }
+.music-bar-active .mini-music-bar:nth-child(2) { animation: dance-mini-bar 1.1s ease-in-out infinite alternate 0.2s; }
+.music-bar-active .mini-music-bar:nth-child(3) { animation: dance-mini-bar 0.9s ease-in-out infinite alternate 0.1s; }
+
+@keyframes dance-mini-bar {
+  0% { height: 2px; }
+  100% { height: 12px; }
+}
