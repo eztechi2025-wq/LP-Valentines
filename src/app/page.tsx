@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Heart, Calendar, Image as ImageIcon, Sparkles, ChevronRight, ChevronDown } from "lucide-react";
+import { Heart, Calendar, Image as ImageIcon, Sparkles, ChevronRight, ChevronDown, BookOpen } from "lucide-react";
 
 import { OpeningHero } from "@/components/sections/namorados/opening-hero";
 import { SpotifyPlayer } from "@/components/sections/namorados/spotify-player";
@@ -85,7 +85,7 @@ export default function Home() {
         id="explore-section" 
         className="w-full min-h-screen flex flex-col justify-center items-center py-16 relative"
       >
-        <section className="w-full max-w-4xl mx-auto px-6 flex flex-col items-center">
+        <section className="w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
           <div className="text-center mb-10">
             <span className="text-pink-500 font-bold text-xs uppercase tracking-widest block mb-2">
               Explorar Mais Memórias
@@ -95,7 +95,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
             {/* Card 1: Linha do Tempo */}
             <Link href="/linha-do-tempo" className="group">
               <motion.div
@@ -163,6 +163,30 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-1 text-[10px] text-yellow-400 font-bold uppercase tracking-widest mt-6">
                   <span>Ver página especial</span>
+                  <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* Card 4: Sabedoria & Reflexões */}
+            <Link href="/reflexoes" className="group">
+              <motion.div
+                whileHover={{ y: -6 }}
+                className="rounded-2xl p-6 h-full wrapped-glass border border-white/5 hover:border-green-500/30 flex flex-col justify-between transition-all duration-300 bg-[#121212]/40"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-6 text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
+                    Sabedoria & Reflexões
+                  </h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    O amor sob a perspectiva das Escrituras Sagradas e do pensamento de filósofos e sociólogos renomados.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1 text-[10px] text-green-400 font-bold uppercase tracking-widest mt-6">
+                  <span>Ler reflexões</span>
                   <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
