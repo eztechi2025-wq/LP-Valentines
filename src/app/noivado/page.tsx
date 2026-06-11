@@ -121,10 +121,10 @@ export default function NoivadoPage() {
           <span>Voltar ao Início</span>
         </Link>
         <Link 
-          href="/linha-do-tempo" 
-          className="w-full sm:w-auto text-center px-8 py-3.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] hover:scale-102 active:scale-95 transition-all text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 border border-pink-400/30"
+          href="/reflexoes" 
+          className="w-full sm:w-auto text-center px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-102 active:scale-95 transition-all text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 border border-emerald-400/30"
         >
-          <span>Ver Linha do Tempo</span>
+          <span>Ler Reflexões</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
